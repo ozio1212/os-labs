@@ -22,7 +22,7 @@ public class Main {
         System.out.print("Podaj kwant czasu dla algorytmu Round Robin: ");
         int timeQuantum = scanner.nextInt();
 
-        System.out.print("Podaj narzut czasu na przełączanie kontekstu (np. 0 lub 1): ");
+        System.out.print("Podaj narzut czasu na przełączanie kontekstu (dla RR): ");
         int contextSwitch = scanner.nextInt();
 
         System.out.println("\nRozpoczynam symulację dla " + numSequences + " ciągów...");
