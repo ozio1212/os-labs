@@ -67,7 +67,7 @@ public class Main {
             totalWaitRR += calculateAverageWaiting(seqRR);
         }
 
-        // --- PODSUMOWANIE WYNIKÓW ---
+        // podsumowanie
         System.out.println("=== WYNIKI KOŃCOWE (Średnie z " + numSequences + " ciągów) ===");
         System.out.printf("1. FCFS: %.2f jednostek czasu\n", totalWaitFCFS / numSequences);
         System.out.printf("2. SJF (bez wywłaszczania): %.2f jednostek czasu\n", totalWaitSJF / numSequences);
