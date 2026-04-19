@@ -40,7 +40,8 @@ public class EDFScheduler implements DiskScheduler {
 
             List<Request> availableRT = available.stream()
                     .filter(Request::isRealTime)
-                    .collect(Collectors.toList());
+                    .filter(r -> r.getDeadline() >= finalCurrentTime)
+                    .collect(Collectors.toList());;
 
             Request target;
             if (!availableRT.isEmpty()) {

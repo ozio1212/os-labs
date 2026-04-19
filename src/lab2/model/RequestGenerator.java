@@ -15,7 +15,8 @@ public class RequestGenerator {
             
             if (random.nextDouble() < rtProbability) {
                 // Deadline should be arrivalTime + distance + some extra
-                int deadline = arrivalTime + random.nextInt(maxDeadline) + (diskSize / 10);
+                int guaranteedTravelTime = diskSize / 2;
+                int deadline = arrivalTime + guaranteedTravelTime + random.nextInt(maxDeadline);
                 requests.add(new Request(position, arrivalTime, true, deadline));
             } else {
                 requests.add(new Request(position, arrivalTime));
