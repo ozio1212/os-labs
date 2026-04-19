@@ -1,6 +1,6 @@
-package Lab1.schedulers;
+package lab1.schedulers;
 
-import Lab1.model.Process;
+import lab1.model.Process;
 
 import java.util.*;
 

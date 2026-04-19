@@ -1,8 +1,8 @@
-package Lab1;
+package lab1;
 
-import Lab1.model.DataFactory;
-import Lab1.schedulers.*;
-import Lab1.model.Process;
+import lab1.model.DataFactory;
+import lab1.schedulers.*;
+import lab1.model.Process;
 
 import java.util.List;
 import java.util.Scanner;

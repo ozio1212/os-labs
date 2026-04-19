@@ -1,63 +1,56 @@
-# CPU Scheduling Simulator (Lab1)
+# Operating Systems Simulations
 
-A Java-based simulation tool to analyze and compare different CPU scheduling algorithms. The project evaluates algorithms based on average waiting times for a series of generated process sequences.
+A collection of Java-based simulation tools designed to analyze and compare various operating system algorithms, including CPU scheduling and disk scheduling.
 
-## Features
+## Simulations Overview
 
-The simulator implements the following scheduling algorithms:
-- **FCFS (First-Come, First-Served)**
-- **SJF (Shortest Job First) - Non-Preemptive**
-- **SJF (Shortest Job First) - Preemptive (SRTF - Shortest Remaining Time First)**
-- **Round Robin (RR)** with configurable time quantum and context switch overhead.
+### 1. CPU Scheduling Simulator (`src/lab1`)
+This simulation evaluates different CPU scheduling strategies by calculating the average waiting times for a set of processes with varying arrival and burst times.
 
-## Stack & Requirements
+- **Algorithms:** 
+  - FCFS (First-Come, First-Served)
+  - SJF (Shortest Job First) - Non-Preemptive
+  - SRTF (Shortest Remaining Time First) - Preemptive SJF
+  - Round Robin (RR) with configurable time quantum and context switch overhead.
+- **Metrics:** Average waiting time.
 
-- **Language:** Java (JDK 8 or higher recommended)
-- **Frameworks:** None (Standard Java Library)
-- **Package Manager:** None (IntelliJ IDEA project structure)
+### 2. Disk Scheduling Simulator (`src/lab2`)
+This simulation analyzes disk head movement for various I/O request scheduling algorithms. It also supports Real-Time (RT) requests with strict deadlines.
+
+- **Algorithms:** 
+  - FCFS (First-Come, First-Served)
+  - SSTF (Shortest Seek Time First)
+  - SCAN (Elevator Algorithm)
+  - C-SCAN (Circular SCAN)
+  - EDF (Earliest Deadline First) - Prioritizes RT requests
+  - FD-SCAN (Feasible Deadline SCAN) - Hybrid approach for RT and standard requests
+- **Metrics:** Total head movement (seek distance) and missed real-time deadlines.
+
+## How to Run
 
 ### Prerequisites
-- [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/downloads/) installed and configured in your environment.
+- [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/downloads/) 8 or higher.
 
-## Project Structure
-
-```text
-src/
-└── Lab1/
-    ├── Main.java              # Main entry point and user interaction
-    ├── model/
-    │   ├── DataFactory.java   # Generator for test process sequences
-    │   └── Process.java       # Process data model
-    └── schedulers/
-        ├── Scheduler.java     # Common interface for all schedulers
-        ├── FCFSScheduler.java
-        ├── RRScheduler.java
-        ├── SJFNonPreemptiveScheduler.java
-        └── SJFPreemptiveScheduler.java
-```
-
-## Setup & Run
-
-### Compiling the project
-From the project root directory, run the following command to compile the source code:
+### Compilation
+From the project root directory, compile all source files into the `out` directory:
 
 ```powershell
-javac -d out\production\OS -sourcepath src src\Lab1\Main.java
+# Compile all labs
+javac -d out\production\OS -sourcepath src src\lab1\Main.java src\lab2\Main.java
 ```
 
-### Running the simulator
-After compilation, use the following command to start the application:
+### Running Simulations
+Each lab has its own entry point (`Main` class). Use the following commands to run them:
 
+#### CPU Scheduling (Lab 1)
 ```powershell
-java -cp out\production\OS Lab1.Main
+java -cp out\production\OS lab1.Main
 ```
 
-### Usage
-The program interface is in Polish. When prompted:
-1. **Podaj liczbę ciągów testowych:** Enter the number of test sequences (e.g., `50`).
-2. **Podaj liczbę procesów w każdym ciągu (N):** Enter the number of processes per sequence.
-3. **Podaj kwant czasu dla algorytmu Round Robin:** Enter the time quantum for the RR algorithm.
-4. **Podaj narzut czasu na przełączanie kontekstu:** Enter the context switch overhead (e.g., `0` or `1`).
+#### Disk Scheduling (Lab 2)
+```powershell
+java -cp out\production\OS lab2.Main
+```
 
-The simulator will display a final summary (WYNIKI KOŃCOWE) with average waiting times for each algorithm.
-
+---
+*Note: The program interfaces are in Polish. Follow the on-screen prompts to provide simulation parameters.*

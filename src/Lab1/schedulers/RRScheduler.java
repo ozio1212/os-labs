@@ -1,4 +1,4 @@
-package Lab1.schedulers;
+package lab1.schedulers;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import Lab1.model.Process;
+import lab1.model.Process;
 
 public class RRScheduler implements Scheduler {
     private int timeQuantum;

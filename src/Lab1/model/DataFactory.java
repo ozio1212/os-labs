@@ -1,4 +1,4 @@
-package Lab1.model;
+package lab1.model;
 
 import java.util.ArrayList;
 import java.util.List;

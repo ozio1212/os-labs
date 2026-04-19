@@ -1,7 +1,7 @@
-package Lab1.schedulers;
+package lab1.schedulers;
 
 import java.util.List;
-import Lab1.model.Process;
+import lab1.model.Process;
 
 public interface Scheduler {
 

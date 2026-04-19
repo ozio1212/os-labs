@@ -1,4 +1,4 @@
-package Lab1.model;
+package lab1.model;
 
 public class Process {
     private int id; // id procesu
