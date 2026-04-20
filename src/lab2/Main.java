@@ -17,10 +17,10 @@ public class Main {
         System.out.print("Podaj rozmiar dysku (liczba cylindrów, np. 200): ");
         int diskSize = scanner.nextInt();
 
-        System.out.print("Podaj początkową pozycję głowicy: ");
+        System.out.print("Podaj początkową pozycję głowicy (np.100): ");
         int initialPos = scanner.nextInt();
 
-        System.out.print("Podaj liczbę żądań w serii: ");
+        System.out.print("Podaj liczbę żądań w serii (np. 100): ");
         int requestCount = scanner.nextInt();
 
         System.out.print("Podaj prawdopodobieństwo żądań RT (0.0 - 1.0): ");
@@ -29,7 +29,7 @@ public class Main {
         System.out.print("Podaj maksymalny deadline dla żądań RT (np. 500): ");
         int maxDeadline = scanner.nextInt();
 
-        System.out.print("Podaj liczbę serii testowych do uśrednienia wyników: ");
+        System.out.print("Podaj liczbę serii testowych do uśrednienia wyników (np. 50): ");
         int seriesCount = scanner.nextInt();
 
         RequestGenerator generator = new RequestGenerator();
