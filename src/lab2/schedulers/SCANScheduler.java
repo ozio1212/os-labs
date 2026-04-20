@@ -56,7 +56,6 @@ public class SCANScheduler implements DiskScheduler {
                 if (next.isDeadlineMissed()) missedDeadlines++;
                 pending.remove(next);
             } else {
-                // Check if any requests are available ANYWHERE
                 final int tempCurrentTime = currentTime;
                 List<Request> availableAnywhere = pending.stream()
                         .filter(r -> r.getArrivalTime() <= tempCurrentTime)
@@ -70,7 +69,6 @@ public class SCANScheduler implements DiskScheduler {
                         currentTime = nextArrival.getArrivalTime();
                     }
                 } else {
-                    // Go to edge
                     int targetEdge = movingUp ? diskSize - 1 : 0;
                     int distanceToEdge = Math.abs(currentHeadPosition - targetEdge);
                     totalMovement += distanceToEdge;
