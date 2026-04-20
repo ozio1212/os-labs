@@ -19,7 +19,6 @@ public class CSCANScheduler implements DiskScheduler {
         int totalRT = 0;
         for (Request r : requests) if (r.isRealTime()) totalRT++;
 
-        // C-SCAN always moves in one direction. Let's assume UP.
         while (!pending.isEmpty()) {
             final int finalCurrentTime = currentTime;
             final int finalHeadPos = currentHeadPosition;
@@ -63,14 +62,11 @@ public class CSCANScheduler implements DiskScheduler {
                         currentTime = nextArrival.getArrivalTime();
                     }
                 } else {
-                    // Go to the end of disk
                     int distanceToEnd = (diskSize - 1) - currentHeadPosition;
                     totalMovement += distanceToEnd;
                     currentTime += distanceToEnd;
-                    
-                    // Jump to beginning (0 distance counted)
+
                     currentHeadPosition = 0;
-                    // No time passes for jump as per "natychmiast"
                 }
             }
         }

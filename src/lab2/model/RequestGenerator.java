@@ -11,7 +11,7 @@ public class RequestGenerator {
         List<Request> requests = new ArrayList<>();
         for (int i = 0; i < count; i++) {
             int position = random.nextInt(diskSize);
-            int arrivalTime = random.nextInt(count * 5); // Spread arrival times
+            int arrivalTime = random.nextInt(count * 5);
             
             if (random.nextDouble() < rtProbability) {
                 // Deadline should be arrivalTime + distance + some extra
