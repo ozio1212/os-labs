@@ -26,6 +26,17 @@ This simulation analyzes disk head movement for various I/O request scheduling a
   - FD-SCAN (Feasible Deadline SCAN) - Hybrid approach for RT and standard requests
 - **Metrics:** Total head movement (seek distance) and missed real-time deadlines.
 
+### 3. Page Replacement Simulator (`src/lab3`)
+This simulation compares various page replacement algorithms used in virtual memory management. It includes a reference string generator based on the principle of locality.
+
+- **Algorithms:** 
+  - FIFO (First-In, First-Out)
+  - OPT (Optimal Algorithm)
+  - LRU (Least Recently Used)
+  - ALRU (Approximated LRU / Second Chance)
+  - RAND (Random Replacement)
+- **Metrics:** Average number of page faults for different frame counts.
+
 ## How to Run
 
 ### Prerequisites
@@ -36,7 +47,7 @@ From the project root directory, compile all source files into the `out` directo
 
 ```powershell
 # Compile all labs
-javac -d out\production\OS -sourcepath src src\lab1\Main.java src\lab2\Main.java
+javac -d out\production\OS -sourcepath src src\lab1\Main.java src\lab2\Main.java src\lab3\Main.java
 ```
 
 ### Running Simulations
@@ -50,6 +61,11 @@ java -cp out\production\OS lab1.Main
 #### Disk Scheduling (Lab 2)
 ```powershell
 java -cp out\production\OS lab2.Main
+```
+
+#### Page Replacement (Lab 3)
+```powershell
+java -cp out\production\OS lab3.Main
 ```
 
 ---
