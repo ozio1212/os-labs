@@ -35,7 +35,7 @@ public class Main {
 
         ReferenceGenerator generator = new ReferenceGenerator();
 
-        System.out.println("\nGenerowanie danych z użyciem zasady lokalności...");
+        System.out.println("\nGenerowanie danych...");
         System.out.println("Długość ciągu: " + sequenceLength + " | Średnia z " + numberOfSimulations + " serii\n");
 
         // generujemy ramki dynamicznie na podstawie parametrów
