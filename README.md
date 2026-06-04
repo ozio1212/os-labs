@@ -37,6 +37,25 @@ This simulation compares various page replacement algorithms used in virtual mem
   - RAND (Random Replacement)
 - **Metrics:** Average number of page faults for different frame counts.
 
+### 4. Frame Allocation Simulator (`src/lab4`)
+This simulation evaluates different frame allocation strategies for multiple processes sharing physical memory.
+
+- **Algorithms:** 
+  - Equal Allocation
+  - Proportional Allocation
+  - PPF (Page Fault Frequency) Algorithm
+  - Working Set Model (Zone Model)
+- **Metrics:** Total page faults and thrashing time.
+
+### 5. Load Balancing Simulator (`src/lab5`)
+A simulation of distributed load balancing algorithms for a system with N identical processors.
+
+- **Algorithms:** 
+  - **Strategy 1:** Processor x asks random processor y about its load. If load < p, the task is sent there. Attempted up to z times.
+  - **Strategy 2:** If processor x load > p, the task is sent to a randomly selected processor y with load < p (repeating until successful).
+  - **Strategy 3:** Same as Strategy 2, but additionally, underloaded processors (load < r) actively seek to take tasks from overloaded processors (load > p).
+- **Metrics:** Average processor load, average deviation, number of load queries, and process migrations.
+
 ## How to Run
 
 ### Prerequisites
@@ -47,7 +66,7 @@ From the project root directory, compile all source files into the `out` directo
 
 ```powershell
 # Compile all labs
-javac -d out\production\OS -sourcepath src src\lab1\Main.java src\lab2\Main.java src\lab3\Main.java
+javac -d out\production\OS -sourcepath src src\lab1\Main.java src\lab2\Main.java src\lab3\Main.java src\lab4\Main.java src\lab5\Main.java
 ```
 
 ### Running Simulations
@@ -66,6 +85,16 @@ java -cp out\production\OS lab2.Main
 #### Page Replacement (Lab 3)
 ```powershell
 java -cp out\production\OS lab3.Main
+```
+
+#### Frame Allocation (Lab 4)
+```powershell
+java -cp out\production\OS lab4.Main
+```
+
+#### Load Balancing (Lab 5)
+```powershell
+java -cp out\production\OS lab5.Main
 ```
 
 ---
