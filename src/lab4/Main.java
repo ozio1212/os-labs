@@ -37,7 +37,7 @@ public class Main {
 
         GlobalGenerator generator = new GlobalGenerator();
 
-        System.out.println("\nRozpoczynam symulację... To może chwilę potrwać (bardzo dużo obliczeń!).\n");
+        System.out.println("\nRozpoczynam symulację...\n");
 
         int currentFrames = initialFrames;
 
